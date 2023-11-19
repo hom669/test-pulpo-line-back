@@ -24,7 +24,7 @@ class CurrencyConverterController extends Controller
 
     public function currencyConvert(Request $request)
     {
-        $getCountriesMoney = $this->currencyConverterService->currencyConvert($request['userConnect']['id'], $request['amount'], $request['fromCountry'], $request['toCountry']);
+        $getCountriesMoney = $this->currencyConverterService->currencyConvert($request['userConnect'], $request['amount'], $request['fromCountry'], $request['toCountry']);
         return response()->json($getCountriesMoney['data'], $getCountriesMoney['status']);
     }
 }
